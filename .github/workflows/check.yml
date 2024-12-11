@@ -5,10 +5,12 @@ on:
     paths:
       - 'contrib/debian/**'
       - 'contrib/conf/**'
+      - 'scripts/deb-source.sh'
   pull_request:
     paths:
       - 'contrib/debian/**'
       - 'contrib/conf/**'
+      - 'scripts/deb-source.sh'
 
 jobs:
   build:
