@@ -3,10 +3,12 @@ name: commit/pr checks
 on:
   push:
     paths:
-      - contrib/debian
+      - 'contrib/debian/**'
+      - 'contrib/conf/**'
   pull_request:
     paths:
-      - contrib/debian
+      - 'contrib/debian/**'
+      - 'contrib/conf/**'
 
 jobs:
   build:
