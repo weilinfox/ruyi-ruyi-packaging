@@ -1,0 +1,25 @@
+name: commit/pr checks
+
+on:
+  push:
+    paths:
+      - contrib/debian
+    pull_request:
+      - contrib/debian
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    name: 'deb-source'
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v4
+      - run: scripts/deb-source.sh
+      - name: DEB source package
+        uses: actions/upload-artifact@v3
+        with:
+          path: |
+            python-ruyi_*.dsc
+            python-ruyi_*.orig.tar.gz
+            python-ruyi_*.debian.tar.*
+
