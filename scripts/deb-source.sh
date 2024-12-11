@@ -2,7 +2,7 @@
 
 set -e
 
-SOURCE_DIR="$(dirname $(realpath $0/../))"
+SOURCE_DIR="$(dirname $(realpath $0))/.."
 DEBIAN_DIR="$SOURCE_DIR"/contrib/debian
 CONFIG_FILE="$SOURCE_DIR"/contrib/conf/config.toml
 
