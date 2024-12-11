@@ -4,7 +4,8 @@ on:
   push:
     paths:
       - contrib/debian
-    pull_request:
+  pull_request:
+    paths:
       - contrib/debian
 
 jobs:
@@ -22,4 +23,3 @@ jobs:
             python-ruyi_*.dsc
             python-ruyi_*.orig.tar.gz
             python-ruyi_*.debian.tar.*
-
