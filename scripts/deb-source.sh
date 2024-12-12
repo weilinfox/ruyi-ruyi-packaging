@@ -34,7 +34,7 @@ cp "$CONFIG_FILE" bin/
 cd ..
 # get orig package
 wget https://github.com/ruyisdk/ruyi/releases/download/"$upstream_version"/ruyi-"$upstream_version".tar.gz
-cp -v ruyi-"$upstream_version".tar.gz "$ORIG_TARBALL"
+mv -v ruyi-"$upstream_version".tar.gz "$ORIG_TARBALL"
 
 # extract ruyi source
 mkdir ruyi-source
