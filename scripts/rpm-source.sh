@@ -108,7 +108,7 @@ pushd keys >/dev/null
 
 wget https://github.com/rpm-software-management/distribution-gpg-keys/archive/refs/tags/distribution-gpg-keys-1.106-1.tar.gz
 tar -xf distribution-gpg-keys-1.106-1.tar.gz
-cd distribution-gpg-keys-1.106-1
+cd distribution-gpg-keys-distribution-gpg-keys-1.106-1
 sudo mkdir /usr/share/distribution-gpg-keys
 sudo cp -Rp keys/* /usr/share/distribution-gpg-keys
 popd >/dev/null
