@@ -2,7 +2,9 @@
 
 set -e
 
-sudo apt-get install python3-mock
+sudo apt-get install dnf
+
+whoami
 
 ls /etc/mock
 
