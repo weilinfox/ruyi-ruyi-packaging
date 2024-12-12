@@ -24,7 +24,6 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           path: |
-            python-ruyi_*.dsc
-            python-ruyi_*.orig.tar.gz
-            python-ruyi_*.debian.tar.*
-          working-directory: contrib
+            contrib/python-ruyi_*.dsc
+            contrib/python-ruyi_*.orig.tar.gz
+            contrib/python-ruyi_*.debian.tar.*
