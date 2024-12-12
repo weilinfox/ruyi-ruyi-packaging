@@ -27,7 +27,7 @@ sudo install -Dp -m755 py/mock.py /usr/bin/mock
 sudo install -Dp -m755 mockchain  /usr/bin/mockchain
 sudo install -Dp -m755 py/mock-hermetic-repo.py /usr/bin/mock-hermetic-repo
 sudo install -Dp -m755 py/mock-parse-buildlog.py /usr/bin/mock-parse-buildlog
-sudo install create_default_route_in_container.sh /usr/libexec/mock/
+# sudo install create_default_route_in_container.sh /usr/libexec/mock/
 
 sudo cp -a etc/pam/* /etc/pam.d/
 
