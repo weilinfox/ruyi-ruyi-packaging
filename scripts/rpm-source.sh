@@ -13,7 +13,7 @@ python3 ./setup.py build
 sudo python3 ./setup.py install --optimize=1 --skip-build
 
 popd >/dev/null
-rm -r tm-source
+rm -r td-source
 
 # install mock
 mkdir mock-source
