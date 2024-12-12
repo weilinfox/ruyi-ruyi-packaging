@@ -40,7 +40,7 @@ mv -v ruyi-"$upstream_version".tar.gz "$ORIG_TARBALL"
 mkdir ruyi-source
 cp -r "$DEBIAN_DIR" ruyi-source
 cd ruyi-source
-tar xf ../ruyi-"$upstream_version".tar.gz
+tar xf ../"$ORIG_TARBALL"
 # build source package
 dpkg-source -b .
 
