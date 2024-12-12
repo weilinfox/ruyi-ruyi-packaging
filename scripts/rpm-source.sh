@@ -12,6 +12,7 @@ sitelib=$(python3 -c 'from sysconfig import get_path; import sys; sys.stdout.wri
 pkgver=5.9
 rpmrel=1
 
+cd mock-$pkgver
 sed -r -i py/mockbuild/constants.py py/mock-parse-buildlog.py \
 	-e 's|^VERSION\s*=.*|VERSION="'$pkgver'"|' \
 	-e 's|^SYSCONFDIR\s*=.*|SYSCONFDIR="/etc"|' \
@@ -64,6 +65,9 @@ sudo install -p -D -m 0644 mock.conf /usr/lib/sysusers.d
 
 sudo sed -i 's/^_MOCK_NVR = None$/_MOCK_NVR = "mock-'$pkgver-$rpmrel'"/' \
     /usr/libexec/mock/mock
+
+cd ../..
+rm -r mock-source
 
 sudo mock --version
 
