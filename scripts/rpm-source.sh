@@ -16,7 +16,7 @@ popd >/dev/null
 sudo rm -r td-source
 
 # install mock
-sudo apt-get install python3-pyroute2 python3-backoff
+sudo apt-get install python3-pyroute2 python3-backoff python3-rpm
 
 mkdir mock-source
 pushd mock-source >/dev/null
