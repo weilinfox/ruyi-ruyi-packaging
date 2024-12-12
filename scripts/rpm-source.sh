@@ -49,7 +49,7 @@ sudo cp -a etc/pki/* /etc/pki/mock/
 sudo cp -a py/mockbuild $sitelib/
 
 # sudo install -d /usr/share/man/man1
-sudo cp -a docs/mock.1 docs/mock-parse-buildlog.1 mock-hermetic-repo.1 /usr/share/man/man1/
+# sudo cp -a docs/mock.1 docs/mock-parse-buildlog.1 mock-hermetic-repo.1 /usr/share/man/man1/
 sudo install -d /usr/share/cheat
 sudo cp -a docs/mock.cheat /usr/share/cheat/mock
 
