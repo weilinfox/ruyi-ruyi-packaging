@@ -27,3 +27,4 @@ jobs:
             python-ruyi_*.dsc
             python-ruyi_*.orig.tar.gz
             python-ruyi_*.debian.tar.*
+          working-directory: contrib
