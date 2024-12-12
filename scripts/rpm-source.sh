@@ -123,6 +123,7 @@ SOURCE_DIR="$(dirname $(realpath $0))/.."
 RPM_DIR="$SOURCE_DIR"/contrib/rpm
 CONFIG_FILE="$SOURCE_DIR"/contrib/conf/config.toml
 
+# 0.23.0-beta should be 0.23.0~beta
 spec_version=$(grep '^Version:' "$RPM_DIR"/python-ruyi.spec | head -n1 | sed "s/ //g" | cut -d':' -f2)
 spec_oe_version=$(grep '^Version:' "$RPM_DIR"/python-ruyi-oe.spec | head -n1 | sed "s/ //g" | cut -d':' -f2)
 spec_release=$(grep '^Release:' "$RPM_DIR"/python-ruyi.spec | head -n1 | sed "s/ //g" | cut -d':' -f2)

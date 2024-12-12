@@ -1,10 +1,10 @@
 %global _empty_manifest_terminate_build 0
 %global __requires_exclude python3\\.[0-9]+dist\\(types-(cffi|pygit2|pyyaml|requests)\\)
 %global module ruyi
+%global version 0.23.0
 
 Name:		python-%{module}
 Version:        0.23.0
-_version:       0.23.0
 Release:	1%{?dist}
 Summary:	RuyiSDK Package Manager
 License:	Apache-2.0
