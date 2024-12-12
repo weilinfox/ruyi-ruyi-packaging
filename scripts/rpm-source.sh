@@ -2,9 +2,22 @@
 
 set -e
 
+# install templated-dictionary
+mkdir td-source
+pushd td-source >/dev/null
+wget https://github.com/xsuchy/templated-dictionary/archive/refs/tags/python-templated-dictionary-1.5-1.tar.gz
+tar -xf python-templated-dictionary-1.5-1.tar.gz
+cd templated-dictionary-python-templated-dictionary-1.5-1
+
+python3 -m ./setup.py build
+sudo python ./setup.py install --optimize=1 --skip-build
+
+popd >/dev/null
+rm -r tm-source
+
 # install mock
 mkdir mock-source
-cd mock-source
+pushd mock-source >/dev/null
 wget https://github.com/rpm-software-management/mock/releases/download/mock-5.9-1/mock-5.9.tar.gz
 tar -xf mock-5.9.tar.gz
 
@@ -12,6 +25,7 @@ sitelib=$(python3 -c 'from sysconfig import get_path; import sys; sys.stdout.wri
 pkgver=5.9
 rpmrel=1
 
+# see https://aur.archlinux.org/cgit/aur.git/tree/PKGBUILD?h=mock and mock-$pkgver.tar.gz/mock.spec
 cd mock-$pkgver
 sed -r -i py/mockbuild/constants.py py/mock-parse-buildlog.py \
 	-e 's|^VERSION\s*=.*|VERSION="'$pkgver'"|' \
@@ -62,7 +76,7 @@ install -p -m 0644 docs/site-defaults.cfg /usr/share/doc/mock
 # sudo mkdir -p /usr/lib/sysusers.d
 sudo install -p -D -m 0644 mock.conf /usr/lib/sysusers.d
 
-cd ../..
+popd >/dev/null
 rm -r mock-source
 
 sudo mock --version
