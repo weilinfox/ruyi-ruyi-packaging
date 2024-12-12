@@ -26,8 +26,12 @@ ORIG_TARBALL="python-ruyi_$orig_version.orig.tar.gz"
 # gz or xz or ?
 DEBIAN_TARBALL="python-ruyi_$orig_version-$debian_reversion.debian.tar"
 
-cd "$DEBIAN_DIR"/../
+cd "$DEBIAN_DIR"
+# copy config file
+mkdir bin
+cp "$CONFIG_FILE" bin/
 
+cd ..
 # get orig package
 wget https://github.com/ruyisdk/ruyi/releases/download/"$upstream_version"/ruyi-"$upstream_version".tar.gz
 cp -v ruyi-"$upstream_version".tar.gz "$ORIG_TARBALL"
@@ -37,9 +41,6 @@ mkdir ruyi-source
 cp -r "$DEBIAN_DIR" ruyi-source
 cd ruyi-source
 tar xf ../ruyi-"$upstream_version".tar.gz
-# copy config file
-mkdir bin
-cp "$CONFIG_FILE" bin/
 # build source package
 dpkg-source -b .
 
