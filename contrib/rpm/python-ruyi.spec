@@ -3,8 +3,8 @@
 %global module ruyi
 
 Name:		python-%{module}
-Version:        0.22.0
-Release:	1
+Version:        0.23.0
+Release:	1%{?dist}
 Summary:	RuyiSDK Package Manager
 License:	Apache-2.0
 URL:		https://github.com/ruyisdk/ruyi
@@ -62,5 +62,8 @@ install -m644 %{_sourcedir}/config.toml %{buildroot}%{_prefix}/share/ruyi/config
 %{_usr}/share/ruyi/config.toml
 
 %changelog
+* Thu Dec 12 2024 weilinfox <caiweilin@iscas.ac.cn> - 0.23.0-1
+- Update ruyi version to 0.23.0
+
 * Thu Nov 28 2024 weilinfox <caiweilin@iscas.ac.cn> - 0.22.0-1
 - Package init
