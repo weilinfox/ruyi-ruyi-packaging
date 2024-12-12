@@ -2,7 +2,7 @@
 
 set -e
 
-sudo apt-get install mock
+sudo apt-get install python3-mock
 
 ls /etc/mock
 
