@@ -16,7 +16,7 @@ popd >/dev/null
 sudo rm -r td-source
 
 # install mock
-sudo apt-get install python3-pyroute2 python3-backoff python3-rpm
+sudo apt-get install dnf python3-backoff python3-pyroute2 python3-rpm
 
 mkdir mock-source
 pushd mock-source >/dev/null
@@ -36,8 +36,7 @@ sed -r -i py/mockbuild/constants.py py/mock-parse-buildlog.py \
 	-e 's|^PKGPYTHONDIR\s*=.*|PKGPYTHONDIR="'$sitelib'/mockbuild"|'
 sudo sed -i 's/^_MOCK_NVR = None$/_MOCK_NVR = "mock-'$pkgver-$rpmrel'"/' \
     py/mock.py
-sudo mkdir -p /etc/mock/eol/templates
-sudo mkdir -p /etc/mock/templates
+sudo mkdir -p /etc/mock
 
 sudo install -Dp -m755 py/mock.py /usr/bin/mock
 sudo install -Dp -m755 mockchain  /usr/bin/mockchain
@@ -84,9 +83,24 @@ rm -r mock-source
 
 sudo mock --version
 
-sudo apt-get install dnf
+# install mock-core-configs
+mkdir mock-conf
+pushd mock-conf >/dev/null
 
-ls /etc/mock
+wget https://github.com/rpm-software-management/mock/releases/download/mock-core-configs-41.4-1/mock-core-configs-41.4.tar.gz
+tar -xf mock-core-configs-41.4.tar.gz
+cd mock-core-configs-41.4
+
+sudo mkdir -p /etc/mock/eol/templates
+sudo mkdir -p /etc/mock/templates
+
+sudo cp -a etc/mock/*.cfg /etc/mock
+sudo cp -a etc/mock/templates/*.tpl /etc/mock/templates
+sudo cp -a etc/mock/eol/*cfg /etc/mock/eol
+sudo cp -a etc/mock/eol/templates/*.tpl /etc/mock/eol/templates
+
+popd >/dev/null
+rm -r mock-conf
 
 SOURCE_DIR="$(dirname $(realpath $0))/.."
 RPM_DIR="$SOURCE_DIR"/contrib/rpm
