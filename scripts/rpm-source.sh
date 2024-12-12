@@ -116,7 +116,9 @@ rm -r keys
 
 # Init mock envs
 sudo mock -r fedora-39-x86_64 --init
+sudo mock -r fedora-40-x86_64 --init
 sudo mock -r fedora-41-x86_64 --init
+sudo mock -r fedora-42-x86_64 --init
 sudo mock -r openeuler-24.03-x86_64 --init
 
 SOURCE_DIR="$(dirname $(realpath $0))/.."
@@ -142,12 +144,14 @@ cd "$RPM_DIR"
 
 # get upstream source
 wget https://github.com/ruyisdk/ruyi/releases/download/"$upstream_version"/ruyi-"$upstream_version".tar.gz
-[[ "$upstream_version" != "$spec_version" ]] && mv -v ruyi-"$upstream_version".tar.gz ruyi-"$spec_version".tar.gz
+# [[ "$upstream_version" != "$spec_version" ]] && mv -v ruyi-"$upstream_version".tar.gz ruyi-"$spec_version".tar.gz
 
 # copy config file
 cp "$CONFIG_FILE" .
 
 sudo mock -r fedora-39-x86_64 --buildsrpm --sources . --spec ./python-ruyi.spec --resultdir ..
+sudo mock -r fedora-40-x86_64 --buildsrpm --sources . --spec ./python-ruyi.spec --resultdir ..
 sudo mock -r fedora-41-x86_64 --buildsrpm --sources . --spec ./python-ruyi.spec --resultdir ..
-sudo mock -r openeuler-24.03-x86_64 --buildsrpm --sources . --spec ./python-ruyi-oe.spec --resultdir .. || cat ../build.log
+sudo mock -r fedora-42-x86_64 --buildsrpm --sources . --spec ./python-ruyi.spec --resultdir ..
+sudo mock -r openeuler-24.03-x86_64 --buildsrpm --sources . --spec ./python-ruyi-oe.spec --resultdir ..
 
