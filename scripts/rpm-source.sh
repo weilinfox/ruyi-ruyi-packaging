@@ -21,15 +21,12 @@ sed -r -i py/mockbuild/constants.py py/mock-parse-buildlog.py \
 sudo mkdir -p /etc/mock/eol/templates
 sudo mkdir -p /etc/mock/templates
 
-sudo install -d /usr/libexec/mock
-sudo install mockchain /usr/bin/mockchain
-sudo install py/mock-hermetic-repo.py /usr/bin/mock-hermetic-repo
-sudo install py/mock-parse-buildlog.py /usr/bin/mock-parse-buildlog
-sudo install py/mock.py /usr/libexec/mock/mock
-sudo ln -s consolehelper /usr/bin/mock
+sudo install -Dp -m755 py/mock.py /usr/bin/mock
+sudo install -Dp -m755 mockchain  /usr/bin/mockchain
+sudo install -Dp -m755 py/mock-hermetic-repo.py /usr/bin/mock-hermetic-repo
+sudo install -Dp -m755 py/mock-parse-buildlog.py /usr/bin/mock-parse-buildlog
 sudo install create_default_route_in_container.sh /usr/libexec/mock/
 
-# sudo install -d /etc/pam.d
 sudo cp -a etc/pam/* /etc/pam.d/
 
 sudo install -d /etc/mock
