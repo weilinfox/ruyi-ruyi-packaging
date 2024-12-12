@@ -3,6 +3,8 @@
 set -e
 
 # install templated-dictionary
+sudo apt-get install python3-jinja2
+
 mkdir td-source
 pushd td-source >/dev/null
 wget https://github.com/xsuchy/templated-dictionary/archive/refs/tags/python-templated-dictionary-1.5-1.tar.gz
