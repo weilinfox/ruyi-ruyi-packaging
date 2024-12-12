@@ -23,6 +23,7 @@ jobs:
       - name: DEB source package
         uses: actions/upload-artifact@v3
         with:
+          name: deb-source
           path: |
             contrib/python-ruyi_*.dsc
             contrib/python-ruyi_*.orig.tar.gz
