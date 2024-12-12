@@ -3,7 +3,7 @@
 %global module ruyi
 %global version 0.23.0
 
-Name:		python-%{module
+Name:		python-%{module}
 Version:        0.23.0
 Release:	1%{?dist}
 Summary:	RuyiSDK Package Manager
