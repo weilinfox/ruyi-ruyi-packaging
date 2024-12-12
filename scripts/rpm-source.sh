@@ -18,6 +18,8 @@ sed -r -i py/mockbuild/constants.py py/mock-parse-buildlog.py \
 	-e 's|^SYSCONFDIR\s*=.*|SYSCONFDIR="/etc"|' \
 	-e 's|^PYTHONDIR\s*=.*|PYTHONDIR="'$sitelib'"|' \
 	-e 's|^PKGPYTHONDIR\s*=.*|PKGPYTHONDIR="'$sitelib'/mockbuild"|'
+sudo sed -i 's/^_MOCK_NVR = None$/_MOCK_NVR = "mock-'$pkgver-$rpmrel'"/' \
+    py/mock.py
 sudo mkdir -p /etc/mock/eol/templates
 sudo mkdir -p /etc/mock/templates
 
@@ -59,9 +61,6 @@ install -p -m 0644 docs/site-defaults.cfg /usr/share/doc/mock
 
 # sudo mkdir -p /usr/lib/sysusers.d
 sudo install -p -D -m 0644 mock.conf /usr/lib/sysusers.d
-
-sudo sed -i 's/^_MOCK_NVR = None$/_MOCK_NVR = "mock-'$pkgver-$rpmrel'"/' \
-    /usr/libexec/mock/mock
 
 cd ../..
 rm -r mock-source
