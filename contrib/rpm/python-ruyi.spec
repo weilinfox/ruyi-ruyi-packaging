@@ -9,7 +9,7 @@ Release:	1%{?dist}
 Summary:	RuyiSDK Package Manager
 License:	Apache-2.0
 URL:		https://github.com/ruyisdk/ruyi
-Source0:	https://github.com/ruyisdk/ruyi/releases/download/%{_version}/ruyi-%{_version}.tar.gz
+Source0:	https://github.com/ruyisdk/ruyi/releases/download/%{version}/ruyi-%{version}.tar.gz
 Source1:	config.toml
 BuildArch:	noarch
 
