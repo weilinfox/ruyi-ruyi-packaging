@@ -147,6 +147,7 @@ wget https://github.com/ruyisdk/ruyi/releases/download/"$upstream_version"/ruyi-
 # copy config file
 cp "$CONFIG_FILE" .
 
-sudo mock -r fedora-41-x86_64 --buildsrpm --sources . --spec ./python-ruyi.spec --resultdir .. || cat ../*.log
-# sudo mock -r openeuler-24.03-x86_64 --buildsrpm --sources . --spec ./python-ruyi-oe.spec --resultdir .. || ls . ..
+sudo mock -r fedora-41-x86_64 --buildsrpm --sources . --spec ./python-ruyi.spec --resultdir ..
+ls ..
+# sudo mock -r openeuler-24.03-x86_64 --buildsrpm --sources . --spec ./python-ruyi-oe.spec --resultdir ..
 
