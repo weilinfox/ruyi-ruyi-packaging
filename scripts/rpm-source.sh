@@ -39,9 +39,9 @@ sudo install -d /etc/security/console.apps/
 sudo cp -a etc/consolehelper/mock /etc/security/console.apps/mock
 
 # sudo install -d /usr/share/bash-completion/completions/
-sudo cp -a etc/bash_completion.d/* /usr/share/bash-completion/completions/
-sudo cp -a mock.complete /usr/share/bash-completion/completions/mock
-sudo ln -s mock /usr/share/bash-completion/completions/mock-parse-buildlog
+# sudo cp -a etc/bash_completion.d/* /usr/share/bash-completion/completions/
+# sudo cp -a mock.complete /usr/share/bash-completion/completions/mock
+# sudo ln -s mock /usr/share/bash-completion/completions/mock-parse-buildlog
 
 sudo install -d /etc/pki/mock
 sudo cp -a etc/pki/* /etc/pki/mock/
