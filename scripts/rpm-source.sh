@@ -16,6 +16,8 @@ popd >/dev/null
 sudo rm -r td-source
 
 # install mock
+sudo apt-get install python3-pyroute2
+
 mkdir mock-source
 pushd mock-source >/dev/null
 wget https://github.com/rpm-software-management/mock/releases/download/mock-5.9-1/mock-5.9.tar.gz
