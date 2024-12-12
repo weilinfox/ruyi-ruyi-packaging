@@ -102,6 +102,10 @@ sudo cp -a etc/mock/eol/templates/*.tpl /etc/mock/eol/templates
 popd >/dev/null
 rm -r mock-conf
 
+sudo mock -r fedora-39-x86_64 --init
+sudo mock -r fedora-41-x86_64 --init
+sudo mock -r openeuler-24.03-x86_64 --init
+
 SOURCE_DIR="$(dirname $(realpath $0))/.."
 RPM_DIR="$SOURCE_DIR"/contrib/rpm
 CONFIG_FILE="$SOURCE_DIR"/contrib/conf/config.toml
