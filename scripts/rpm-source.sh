@@ -76,7 +76,7 @@ install -p -m 0644 docs/buildroot-lock-schema-*.json /usr/share/doc/mock/
 install -p -m 0644 docs/site-defaults.cfg /usr/share/doc/mock
 
 # sudo mkdir -p /usr/lib/sysusers.d
-sudo install -p -D -m 0644 mock.conf /usr/lib/sysusers.d
+echo 'g  mock  -  -' | sudo tee /usr/lib/sysusers.d/mock.conf
 
 popd >/dev/null
 rm -r mock-source
