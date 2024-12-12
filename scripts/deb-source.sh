@@ -9,7 +9,7 @@ CONFIG_FILE="$SOURCE_DIR"/contrib/conf/config.toml
 changelog_version=$(head -n1 "$DEBIAN_DIR"/changelog | cut -d' ' -f2)
 if [[ "$changelog_version" =~ ^\(([0-9]+:)?([a-zA-Z0-9.+~:-]+)-([a-zA-Z0-9.+~]+)\)$ ]]; then
 	orig_version="${BASH_REMATCH[2]}"
-	debian_revision="${BASH_REMATCH[3]}"
+	debian_reversion="${BASH_REMATCH[3]}"
 
 	# Replace '~' with '-' in the upstream version
 	upstream_version="${orig_version//'~'/-}"
