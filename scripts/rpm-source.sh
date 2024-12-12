@@ -149,5 +149,5 @@ cp "$CONFIG_FILE" .
 
 sudo mock -r fedora-39-x86_64 --buildsrpm --sources . --spec ./python-ruyi.spec --resultdir ..
 sudo mock -r fedora-41-x86_64 --buildsrpm --sources . --spec ./python-ruyi.spec --resultdir ..
-sudo mock -r openeuler-24.03-x86_64 --buildsrpm --sources . --spec ./python-ruyi-oe.spec --resultdir ..
+sudo mock -r openeuler-24.03-x86_64 --buildsrpm --sources . --spec ./python-ruyi-oe.spec --resultdir .. || cat ../build.log
 
